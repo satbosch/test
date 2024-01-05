@@ -12,11 +12,9 @@
 # -------------------------------------------------------
 # Download python packages
 
-# C:\work\00_dev\xcprovirt\Bosch_Web_Template_2024\>
+# Proxy is needed. Use PX.exe or other proxy
 
-# pip download pip==23.3.2
-# pip download setuptools==69.0.2
-# pip download wheel==0.42.0
+# C:\work\00_dev\xcprovirt\Bosch_Web_Template_2024\>
 
 pip download asgiref==3.7.2 --dest .\install\packages
 pip download Django==4.2.9 --dest .\install\packages

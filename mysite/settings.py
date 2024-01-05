@@ -38,7 +38,6 @@ SESSION_COOKIE_SAMESITE = 'Lax'
 # Application definition
 
 INSTALLED_APPS = [
-    "bwt2024.apps.Bwt2024Config",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -46,6 +45,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "widget_tweaks",
+    'rest_framework',
+    "bwt2024.apps.Bwt2024Config",
 ]
 
 MIDDLEWARE = [
@@ -59,6 +60,9 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "mysite.urls"
+
+# pvieira_todo LOGIN_REDIRECT_URL = 'home'   # Route defined in app/urls.py
+# pvieira_todo LOGOUT_REDIRECT_URL = 'home'  # Route defined in app/urls.py
 
 TEMPLATES = [
     {
@@ -78,6 +82,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "mysite.wsgi.application"
 
+
+# pvieira_todo REST_FRAMEWORK = {
+# pvieira_todo     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+# pvieira_todo     'PAGE_SIZE': 10
+# pvieira_todo }
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
@@ -124,3 +133,11 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+# importing logger settings
+try:
+    from .log_settings import *
+except Exception as e:
+    # in case of any error, pass silently.
+    pass

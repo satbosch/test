@@ -19,12 +19,3 @@ class Object_Unit_Form(ModelForm):
         model   = Object_Unit
         fields  = ['name','description']
 
-###########################################################
-# BOM_Dictionary
-###########################################################
-class BOM_Dictionary_Form(ModelForm):
-
-    class Meta:
-        model = BOM_Dictionary
-        fields = ['bom_component','bom_component_version','bom_homepage','component','version','vendor','cpe']
-
