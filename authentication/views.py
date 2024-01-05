@@ -12,6 +12,9 @@ import logging
 
 logger = logging.getLogger(__file__)
 
+###########################################################
+# Login
+###########################################################
 def view_login(request):
     form = LoginForm(request.POST or None)
 
@@ -35,9 +38,9 @@ def view_login(request):
 
     return render(request, "login.html", {"form": form, "msg" : msg})
 
-
-
-# logout page
+###########################################################
+# logout
+###########################################################
 def view_logout(request):
     logout(request)
     return redirect('home')
