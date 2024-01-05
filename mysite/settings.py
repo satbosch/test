@@ -64,10 +64,12 @@ ROOT_URLCONF = "mysite.urls"
 # pvieira_todo LOGIN_REDIRECT_URL = 'home'   # Route defined in app/urls.py
 # pvieira_todo LOGOUT_REDIRECT_URL = 'home'  # Route defined in app/urls.py
 
+AUTHENTICATION_TEMPLATE_DIR = BASE_DIR / 'authentication/templates'  # ROOT dir for templates
+
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [AUTHENTICATION_TEMPLATE_DIR],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [

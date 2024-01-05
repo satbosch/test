@@ -10,6 +10,8 @@
 
   <!-- Sidebar -->
   <div class="sidebar">
+
+    {% if request.user.is_authenticated %}
     <!-- Sidebar user -->
     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
       <div class="image">
@@ -23,6 +25,7 @@
             data-toggle="tooltip" title="Logout"></i></a>
       </div>
     </div>
+    {% endif %}
 
     <!-- Sidebar Menu -->
     <nav class="mt-2">

@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>bwt2024 - {% block title %}{% endblock %} | XC/EVI | Login</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/static/assets/plugins/fontawesome-free/css/all.min.css">
+    <!-- icheck bootstrap -->
+    <link rel="stylesheet" href="/static/assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/static/assets/dist/css/adminlte.min.css">
+
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    
+</head>
+
+<body class="hold-transition login-page">
+    <div class="login-box">
+        <div class="login-logo">
+            <a href="#"><b>bwt2024 - XC/EVI</b></a>
+        </div>
+        <!-- /.login-logo -->
+        <div class="card">
+            <div class="card-body login-card-body">
+                <p class="login-box-msg">Sign in to start your session</p>
+                <form role="form" method="post" action="">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label class="small mb-1" for="username">Username</label>
+                        {{ form.username }}
+                    </div>
+                    <div class="form-group">
+                        <label class="small mb-1" for="inputPassword">Password</label>
+                        {{ form.password }}
+                    </div>
+                    <div class="form-group">
+                        <div class="custom-control custom-checkbox">
+                            <input class="custom-control-input" id="rememberPasswordCheck" type="checkbox" />
+                            <label class="custom-control-label" for="rememberPasswordCheck">Remember password</label>
+                        </div>
+                    </div>
+                    <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
+                        <button type="submit" name="login" class="btn btn-primary">Login</button>
+                    </div>
+                </form>
+            </div>
+            <!-- /.login-card-body -->
+        </div>
+    </div>
+    <!-- /.login-box -->
+
+    <!-- scripts content -->
+    {% include 'includes/scripts.html' %}
+    <!-- scripts content -->
+
+</body>
+
+</html>

@@ -9,7 +9,6 @@ from django.forms import ModelForm
 from django.views.generic.edit import UpdateView
 from .models import *
 
-
 ###########################################################
 # Object_Unit
 ###########################################################

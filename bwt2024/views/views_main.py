@@ -21,7 +21,7 @@ logger = logging.getLogger(__file__)
 # home 
 ###########################################################
 #@login_required(login_url="/login/")
-def home(request):
+def view_home(request):
     context = {}
 
     try:
