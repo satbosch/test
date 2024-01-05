@@ -1,0 +1,138 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block title %} BOM Dictionary {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}
+<style>
+  .content-wrapper {
+    min-height: 100% !important;
+  }
+</style>
+{% endblock stylesheets %}
+
+{% block content %}
+<main>
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    {% include 'includes/header.html' %}
+    <!-- Main content -->
+    <section class="content">
+      <form class="form-horizontal" method="POST">
+        {% csrf_token %}
+        {% include 'includes/messages.html' %}
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">BOM Dictionary Entry Information</h3>
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                <i class="fas fa-minus"></i>
+              </button>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="card mb-4">
+                    <div class="card-header" style="text-align: center;">
+                      Black Duck Component
+                    </div>
+                    <div class="card-body">
+                      <div class="row">
+                        <label class="col-md-2 col-form-label" for="bom_component">Name</label>
+                        <div class="col-md-10">
+                          <div class="form-group has-default bmd-form-group">
+                            {% render_field form.bom_component class="form-control" %}
+                          </div>
+                        </div>
+                        <label class="col-md-2 col-form-label" for="bom_component_version">Version</label>
+                        <div class="col-md-10">
+                          <div class="form-group has-default bmd-form-group">
+                            {% render_field form.bom_component_version class="form-control" %}
+                          </div>
+                        </div>
+                        <label class="col-md-2 col-form-label" for="bom_homepage">Homepage</label>
+                        <div class="col-md-10">
+                          <div class="form-group has-default bmd-form-group">
+                            {% render_field form.bom_homepage class="form-control" %}
+                          </div>
+                        </div>
+                        <div class="col-md-12" style="padding-bottom: 14px;">
+                          <div class="form-group has-default bmd-form-group">
+                            &nbsp;
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card mb-4">
+                    <div class="card-header" style="text-align: center;">
+                      MITRE/NVD
+                    </div>
+                    <div class="card-body">
+                      <div class="row">
+                        <label class="col-md-2 col-form-label" for="component">Name</label>
+                        <div class="col-md-10">
+                          <div class="form-group has-default bmd-form-group">
+                            {% render_field form.component class="form-control" %}
+                          </div>
+                        </div>
+                        <label class="col-md-2 col-form-label" for="version">Version</label>
+                        <div class="col-md-10">
+                          <div class="form-group has-default bmd-form-group">
+                            {% render_field form.version class="form-control" %}
+                          </div>
+                        </div>
+                        <label class="col-md-2 col-form-label" for="vendor">Vendor</label>
+                        <div class="col-md-10">
+                          <div class="form-group has-default bmd-form-group">
+                            {% render_field form.vendor class="form-control" %}
+                          </div>
+                        </div>
+                        <label class="col-md-2 col-form-label" for="cpe">CPE</label>
+                        <div class="col-md-10">
+                          <div class="form-group has-default bmd-form-group">
+                            {% render_field form.cpe class="form-control" %}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-10">
+                </div>
+                <div class="col-lg-2" style="text-align: right;">
+                  <button type="submit" formnovalidate class="btn btn-outline-secondary"
+                    name="btn_bom_dictionary_cancel" value="{{ bom_dictionary.id }}"><i
+                      class="fas fa-undo"></i> &nbsp;&nbsp;Cancel
+                  </button>
+                  &nbsp;&nbsp;&nbsp;
+                  <button type="submit" class="btn btn-outline-secondary" name="btn_bom_dictionary_save"
+                    value="{{ bom_dictionary.id }}"><i class="fas fa-save"></i>
+                    &nbsp;&nbsp;Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+      </form>
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- ./wrapper -->
+</main>
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+{% endblock javascripts %}

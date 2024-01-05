@@ -16,10 +16,10 @@ from django.forms import *
 
 
 ###########################################################
-# Object_Unit
+# Object_Unit List/Edit
 ###########################################################
 @login_required(login_url="/login/")
-def object_unit_list(request):
+def object_unit_list_edit(request):
     context = {}
 
     try:
@@ -48,7 +48,7 @@ def object_unit_list(request):
                 for error in formset.errors:
                     messages.error(request, str(error) )
 
-        load_template           = "object_unit\list_edit.html"
+        load_template           = "object_unit\object_unit_list_edit.html"
         context['segment']      = load_template
         context['PageTitle']    = "Object Units "
         context['msghelp']      = "This is an Help message"
@@ -65,3 +65,121 @@ def object_unit_list(request):
         html_template = loader.get_template( 'errors/page-500.html' )
         return HttpResponse(html_template.render(context, request))
 
+###########################################################
+# Object_Unit Create
+###########################################################
+@login_required(login_url="/login/")
+def object_unit_create(request):
+    context = {}
+
+    try:
+
+        if request.method == 'POST' and 'btn_object_unit_cancel' in request.POST:
+            return redirect('object_unit_list')
+
+        elif request.method == 'POST' and 'btn_object_unit_create' in request.POST:
+            form = Object_Unit_Form(request.POST)
+            if form.is_valid():
+                object_unit = form.save()
+                messages.success(request, 'BOM Dictionary Entry '+ str(object_unit.cpe) + ' created.' )
+                return redirect('object_unit_list')
+        else:
+            form = Object_Unit_Form()
+
+        load_template           = "object_unit/object_unit_create.html"
+        context['segment']      = load_template
+        context['PageTitle']    = "BOM Dictionary Create"
+        context['msghelp']      = "This is an Help message"
+        context['breadcrumbs']  = [{'Name' : 'Home', 'Link' : '/', 'Active': False} , {'Name' : 'BOM Dictionary List', 'Link' : '/object_unit_list', 'Active': False}, {'Name' : 'BOM Dictionary Create', 'Link' : '', 'Active': True}]
+
+        context['form'] = form
+
+        html_template = loader.get_template( load_template )
+        return HttpResponse(html_template.render(context, request))
+        
+    except template.TemplateDoesNotExist:
+        html_template = loader.get_template( 'errors/page-404.html' )
+        return HttpResponse(html_template.render(context, request))
+
+    except:
+        html_template = loader.get_template( 'errors/page-500.html' )
+        return HttpResponse(html_template.render(context, request))
+
+###########################################################
+# BOMDictionary Edit
+###########################################################
+@login_required(login_url="/login/")
+def object_unit_edit(request,object_unit_id):
+    context = {}
+
+    try:
+
+        object_unit = Object_Unit.objects.get(pk=object_unit_id)
+        context['object_unit'] = object_unit
+
+        if request.method == 'POST' and 'btn_object_unit_cancel' in request.POST:
+            return redirect('object_unit_list')
+
+        elif request.method == 'POST' and 'btn_object_unit_save' in request.POST:
+            form = Object_Unit_Form(request.POST, instance = object_unit)
+            if form.is_valid():
+                form.save()
+                messages.success(request, 'BOM Dictionary Entry '+ str(object_unit.cpe) + ' saved.')
+                return redirect('object_unit_list')
+
+        load_template           = "object_unit/object_unit_edit.html"
+        context['segment']      = load_template
+        context['PageTitle']    = "BOM Dictionary Edit"
+        context['msghelp']      = "This is an Help message"
+        context['msghelp']      = "This is an Help message"
+        context['breadcrumbs']  = [{'Name' : 'Home', 'Link' : '/', 'Active': False} , {'Name' : 'BOM Dictionary List', 'Link' : '/object_unit_list', 'Active': False}, {'Name' : 'BOM Dictionary Edit', 'Link' : '', 'Active': True}]
+        
+        form = Object_Unit_Form(instance=object_unit)
+        context['form'] = form
+
+        html_template = loader.get_template( load_template )
+        return HttpResponse(html_template.render(context, request))
+        
+    except template.TemplateDoesNotExist:
+        html_template = loader.get_template( 'errors/page-404.html' )
+        return HttpResponse(html_template.render(context, request))
+
+    except:
+        html_template = loader.get_template( 'errors/page-500.html' )
+        return HttpResponse(html_template.render(context, request))
+
+###########################################################
+# BOMDictionary List
+###########################################################
+@login_required(login_url="/login/")
+def object_unit_list(request):
+    context = {}
+
+    try:
+
+        if request.method=='POST' and 'btn_object_unit_edit' in request.POST:
+            object_unit_id = request.POST.get('btn_object_unit_edit')
+            return redirect('object_unit_edit', object_unit_id)
+
+        elif request.method=='POST' and 'btn_object_unit_create' in request.POST:
+            return redirect('object_unit_create')
+
+        load_template           = "object_unit/object_unit_list.html"
+        context['segment']      = load_template
+        context['PageTitle']    = "BOM Dict List"
+        context['msghelp']      = "This is an Help message"
+        context['breadcrumbs']  = [{'Name' : 'Home', 'Link' : '/', 'Active': False} , {'Name' : 'BOM Dictionary List', 'Link' : '/object_unit_list', 'Active': True}]
+
+        object_unit_list = Object_Unit.objects.all()
+        context['object_unit_list'] = object_unit_list
+
+        html_template = loader.get_template( load_template )
+        return HttpResponse(html_template.render(context, request))
+        
+    except template.TemplateDoesNotExist:
+        html_template = loader.get_template( 'errors/page-404.html' )
+        return HttpResponse(html_template.render(context, request))
+
+    except:
+        html_template = loader.get_template( 'errors/page-500.html' )
+        return HttpResponse(html_template.render(context, request))

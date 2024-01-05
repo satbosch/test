@@ -43,10 +43,35 @@
           </a>
         </li>
 
-        {% if request.user.is_authenticated %}
+        {% if request.user.is_anonymous %}
         <!-- item 1 -->
         <li class="nav-item">
-          <a href="{% url 'list_edit' %}" class="nav-link">
+          <a href="{% url 'login' %}" class="nav-link">
+            <i class="nav-icon fas fa-tachometer-alt"></i>
+            <p>
+              Login
+            </p>
+          </a>
+        </li>
+        {% endif %}
+
+
+        {% if request.user.is_authenticated %}
+        
+        <!-- item 1 -->
+        <li class="nav-item">
+          <a href="{% url 'object_unit_list_edit' %}" class="nav-link">
+            <i class="nav-icon fas fa-tachometer-alt"></i>
+            <p>
+              Lista/Edit
+            </p>
+          </a>
+        </li>
+        
+
+        <!-- item 2 -->
+        <li class="nav-item">
+          <a href="{% url 'object_unit_list' %}" class="nav-link">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
               Lista
@@ -54,18 +79,6 @@
           </a>
         </li>
         {% endif %}
-
-        <!-- item 2 -->
-        <li class="nav-item">
-          <a href="item 2" class="nav-link">
-            <i class="nav-icon fas fa-tachometer-alt"></i>
-            <p>
-              Home
-            </p>
-          </a>
-        </li>
-
-
 
 
       </ul>
