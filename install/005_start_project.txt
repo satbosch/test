@@ -1,0 +1,20 @@
+# ==============================================================
+#
+#  Author:	Pedro Vieira (XC/EQS XC/EVI)
+#
+# Create date:  03/01/2024
+# Last Update:	03/01/2024
+#
+# Description:	Start project
+#
+# ==============================================================
+
+# -------------------------------------------------------
+
+C:\work\00_dev\xcprovirt\Bosch_Web_Template_2024>
+
+conda activate python_3.11
+
+.\venv\Scripts\activate
+
+.\venv\scripts\python.exe .\manage.py runserver

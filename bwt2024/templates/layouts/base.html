@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="bwt2024" />
+  <meta name="author" content="XC/EVI" />
+  <title>bwt2024 - {% block title %}{% endblock %} | XC/EVI</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="/static/assets/plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/static/assets/dist/css/adminlte.min.css">
+
+  <!-- Specific Page CSS goes HERE  -->
+  {% block stylesheets %}
+
+  {% endblock stylesheets %}
+
+  <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+  <!-- Site wrapper -->
+  <div class="wrapper">
+
+    <!-- navbar content -->
+    {% include 'includes/bar-top.html' %}
+    <!-- navbar content -->
+
+    <!-- bar-left content -->
+    {% include 'includes/bar-left.html' %}
+    <!-- bar-left content -->
+      
+      
+      {% block content %}
+      
+
+      {% endblock content %}
+  </div>
+    <!-- /.content-wrapper -->
+
+
+    <!-- footer content -->
+    {% include 'includes/footer.html' %}
+    <!-- footer content -->
+
+    <!-- help content -->
+    {% include 'includes/help.html' %}
+    <!-- help content -->
+
+
+  <!-- scripts content -->
+  {% include 'includes/scripts.html' %}
+  <!-- scripts content -->
+
+  <!-- Specific Page JS goes HERE  -->
+  {% block javascripts %}
+
+  {% endblock javascripts %}
+
+
+</body>
+
+</html>

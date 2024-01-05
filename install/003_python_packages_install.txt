@@ -1,0 +1,32 @@
+# ==============================================================
+#
+#  Author:	Pedro Vieira (XC/EQS XC/EVI)
+#
+# Create date:  03/01/2024
+# Last Update:	03/01/2024
+#
+# Description:	Python packages
+#
+# ==============================================================
+
+# -------------------------------------------------------
+# Download python packages
+
+# C:\work\00_dev\xcprovirt\Bosch_Web_Template_2024\>
+
+.\venv\scripts\python.exe -m pip install .\install\packages\pip-23.3.2-py3-none-any.whl -f ./ --no-index
+.\venv\scripts\python.exe -m pip install .\install\packages\wheel-0.42.0-py3-none-any.whl -f ./ --no-index
+.\venv\scripts\python.exe -m pip install .\install\packages\setuptools-69.0.3-py3-none-any.whl -f ./ --no-index
+.\venv\scripts\python.exe -m pip install .\install\packages\sqlparse-0.4.4-py3-none-any.whl -f ./ --no-index
+.\venv\scripts\python.exe -m pip install .\install\packages\typing_extensions-4.9.0-py3-none-any.whl -f ./ --no-index
+.\venv\scripts\python.exe -m pip install .\install\packages\asgiref-3.7.2-py3-none-any.whl -f ./ --no-index
+.\venv\scripts\python.exe -m pip install .\install\packages\tzdata-2023.4-py2.py3-none-any.whl -f ./ --no-index
+.\venv\scripts\python.exe -m pip install .\install\packages\Django-4.2.9-py3-none-any.whl -f ./ --no-index
+.\venv\scripts\python.exe -m pip install .\install\packages\urllib3-2.1.0-py3-none-any.whl -f ./ --no-index
+.\venv\scripts\python.exe -m pip install .\install\packages\pytz-2023.3.post1-py2.py3-none-any.whl -f ./ --no-index
+.\venv\scripts\python.exe -m pip install .\install\packages\zipp-3.17.0-py3-none-any.whl -f ./ --no-index
+.\venv\scripts\python.exe -m pip install .\install\packages\importlib_metadata-7.0.1-py3-none-any.whl -f ./ --no-index
+.\venv\scripts\python.exe -m pip install .\install\packages\django_widget_tweaks-1.5.0-py3-none-any.whl -f ./ --no-index
+.\venv\scripts\python.exe -m pip install .\install\packages\djangorestframework-3.14.0-py3-none-any.whl -f ./ --no-index
+.\venv\scripts\python.exe -m pip install .\install\packages\Markdown-3.5.1-py3-none-any.whl -f ./ --no-index
+.\venv\scripts\python.exe -m pip install .\install\packages\django_filter-23.5-py3-none-any.whl -f ./ --no-index

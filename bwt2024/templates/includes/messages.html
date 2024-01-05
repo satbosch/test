@@ -1,0 +1,43 @@
+{% load static %}
+
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-{{ message.tags }}" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+      aria-hidden="true">&times;</span></button>
+  {{ message }}
+</div>
+{% endfor %}
+{% endif %}
+{% if form.errors %}
+{% for field in form %}
+{% for error in field.errors %}
+<div class="alert alert-danger" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+      aria-hidden="true">&times;</span></button>
+      {{ error|escape }}
+</div>
+{% endfor %}
+{% endfor %}
+{% for error in form.non_field_errors %}
+<div class="alert alert-danger" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+      aria-hidden="true">&times;</span></button>
+      {{ error|escape }}
+</div>
+{% endfor %}
+{% endif %}
+
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+<script>
+  window.setTimeout(function () {
+    $(".alert").fadeTo(1000, 0).slideUp(500, function () {
+      $(this).remove();
+    });
+  }, 5000);
+</script>
+
+{% endblock javascripts %}

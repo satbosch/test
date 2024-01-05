@@ -1,0 +1,36 @@
+{% load static %}
+
+<!-- Navbar -->
+<nav class="main-header navbar navbar-expand navbar-white navbar-light"
+  style="padding-top: 0px; padding-bottom: 0px; border-bottom: 0px">
+
+  <div class="col-sm-11">
+    <div>
+      <ol class="breadcrumb" style="background-color: #fff; padding: 8px 0px 0px 0px; margin-bottom: 8px;">
+        {% for b in breadcrumbs %}
+          {% if b.Active %}
+            <li class="breadcrumb-item active">{{ b.Name }}</li>
+          {% else %}
+            <li class="breadcrumb-item"><a href="{{ b.Link }}"> {{ b.Name }}</a></li>
+          {% endif %}
+        {% endfor %}
+
+      </ol>
+    </div>
+  </div>
+  <!-- Right navbar links -->
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+        <i class="fas fa-expand-arrows-alt"></i>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+        <i class="fas fa-question-circle"></i>
+      </a>
+    </li>
+  </ul>
+</nav>
+<img src="/static/assets/img/cd_bosch_supergraphic.jpg" style="max-width: calc(100% - 0px);">
+<!-- /.navbar -->

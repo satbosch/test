@@ -1,0 +1,36 @@
+# ==============================================================
+#
+#  Author:	Pedro Vieira (XC/EQS XC/EVI)
+#
+# Create date:  03/01/2024
+# Last Update:	03/01/2024
+#
+# Description:	Python packages
+#
+# ==============================================================
+
+# -------------------------------------------------------
+# Download python packages
+
+# C:\work\00_dev\xcprovirt\Bosch_Web_Template_2024\>
+
+# pip download pip==23.3.2
+# pip download setuptools==69.0.2
+# pip download wheel==0.42.0
+
+pip download asgiref==3.7.2 --dest .\install\packages
+pip download Django==4.2.9 --dest .\install\packages
+pip download django-filter==23.5 --dest .\install\packages
+pip download django-widget-tweaks==1.5.0 --dest .\install\packages
+pip download djangorestframework==3.14.0 --dest .\install\packages
+pip download importlib-metadata==7.0.1 --dest .\install\packages
+pip download Markdown==3.5.1 --dest .\install\packages
+pip download pip==23.3.2 --dest .\install\packages
+pip download pytz==2023.3.post1 --dest .\install\packages
+pip download setuptools==69.0.3 --dest .\install\packages
+pip download sqlparse==0.4.4 --dest .\install\packages
+pip download typing_extensions==4.9.0 --dest .\install\packages
+pip download tzdata==2023.4 --dest .\install\packages
+pip download urllib3==2.1.0 --dest .\install\packages
+pip download wheel==0.42.0 --dest .\install\packages
+pip download zipp==3.17.0 --dest .\install\packages

@@ -1,0 +1,48 @@
+# ==============================================================
+#
+#  Author:	Pedro Vieira (XC/EQS XC/EVI)
+#
+# Create date:  03/01/2024
+# Last Update:	03/01/2024
+#
+# Description:	Setup environment
+#
+# ==============================================================
+
+# -------------------------------------------------------
+# Setup environment
+
+# To create environment, use
+#
+# conda create -n python_3.11 python=3.11
+#
+# -------------------------------------------------------
+# To activate this environment, use
+#
+conda activate python_3.11
+#
+# -------------------------------------------------------
+# To list environments, use
+#
+# conda env list
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+#
+# -------------------------------------------------------
+# To remove an environment, use
+#
+# conda remove --name python_3.11 --all
+#
+# -------------------------------------------------------
+
+
+# -------------------------------------------------------
+# To create local environment
+python -m venv venv
+
+virtualenv venv
+
+.\venv\Scripts\activate
+# -------------------------------------------------------

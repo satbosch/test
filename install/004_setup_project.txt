@@ -1,0 +1,57 @@
+# ==============================================================
+#
+#  Author:	Pedro Vieira (XC/EQS XC/EVI)
+#
+# Create date:  03/01/2024
+# Last Update:	03/01/2024
+#
+# Description:	Setup project
+#
+# ==============================================================
+
+# -------------------------------------------------------
+# Create project
+
+django-admin startproject mysite
+
+# Test
+
+.\venv\scripts\python.exe .\manage.py runserver
+
+# -------------------------------------------------------
+# Create App
+
+# C:\work\00_dev\xcprovirt\Bosch_Web_Template_2024\>
+
+.\venv\scripts\python .\manage.py startapp bwt2024
+
+
+# -------------------------------------------------------
+# Migrations
+
+C:\work\00_dev\xcprovirt\Bosch_Web_Template_2024>
+
+.\venv\scripts\python .\manage.py makemigrations
+.\venv\scripts\python .\manage.py migrate
+
+# -------------------------------------------------------
+# Create User
+
+C:\work\00_dev\xcprovirt\Bosch_Web_Template_2024>
+
+.\venv\scripts\python.exe .\manage.py createsuperuser
+
+# admin/admin
+
+# -------------------------------------------------------
+# Test instalation
+
+.\venv\scripts\python.exe .\manage.py runserver
+
+# -------------------------------------------------------
+# Migrations - App Model
+
+.\venv\scripts\python.exe .\manage.py makemigrations bwt2024
+
+# Migrations - See SQL version
+# .\venv\scripts\python.exe .\manage.py  sqlmigrate bwt2024 0001
