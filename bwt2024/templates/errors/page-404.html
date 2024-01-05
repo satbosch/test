@@ -1,0 +1,63 @@
+{% extends "layouts/base-error.html" %}
+
+{% block title %} Error 404 {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}
+
+
+{% endblock stylesheets %}
+
+{% block content %}
+<main>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- navbar content -->
+        {% include 'includes/bar-top.html' %}
+        <!-- navbar content -->
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-3">
+                    </div>
+                    <div class="col-xl-6" style="min-height: 400px;">
+                        <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-xl-3">
+                                        <h1 class="headline text-danger" style="font-size: 8rem; margin-top: 4rem;">404</h1>
+                                    </div>
+                                    <div class="col-xl-9">
+                                        <div class="error-content" style="margin-top: 4rem; margin-left: 2rem;">
+                                            <h2>
+                                                <i class="fas fa-exclamation-triangle text-danger"></i>
+                                                Oops! Page not found.
+                                            </h2>
+                                            <br><br>
+                                            <h4>
+                                                We will work on fixing that right away.<br>
+                                                Meanwhile, you may <a href="/">return to dashboard</a>
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3">
+                        </div>
+                    </div>
+                    <!-- /.error-page -->
+                </div>
+            </div>
+        </section>
+        <!-- /.content -->
+    </div>
+</main>
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+{% endblock javascripts %}

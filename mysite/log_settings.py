@@ -37,7 +37,7 @@ LOGGING = {
             'filters': ['require_debug_false'],
             'formatter': 'standard',
             'class': 'logging.FileHandler',
-            'filename': BASE_DIR / 'logs/warnning.log',
+            'filename': BASE_DIR / 'logs/warning.log',
         },
         # critical errors are logged to sentry
         'error': {

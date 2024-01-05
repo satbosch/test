@@ -20,7 +20,7 @@ logger = logging.getLogger(__file__)
 ###########################################################
 # home 
 ###########################################################
-@login_required(login_url="/login/")
+#@login_required(login_url="/login/")
 def home(request):
     context = {}
 
