@@ -9,7 +9,8 @@ from rest_framework             import permissions, viewsets
 from rest_framework.views       import APIView
 from bwt2024.serializers        import *
 
-class Object_Unit_ViewSet(viewsets.ModelViewSet):
+#class Object_Unit_ViewSet(viewsets.ModelViewSet):
+class Object_Unit_ViewSet(viewsets.ReadOnlyModelViewSet):
     permission_classes = [permissions.IsAuthenticated]
 
     queryset = Object_Unit.objects.all()

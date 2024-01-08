@@ -11,7 +11,7 @@ from bwt2024.views      import *
 # API
 ###########################################################
 router = routers.DefaultRouter()
-router.register(r'ou', views_serializer.Object_Unit_ViewSet)
+router.register(r'Units', views_serializer.Object_Unit_ViewSet)
 
 urlpatterns = [
 
