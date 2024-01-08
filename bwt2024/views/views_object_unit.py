@@ -3,16 +3,16 @@
 Copyright (c) 2024 - XC/EVI
 """
 
-from django import template
-from django.contrib import messages
-from django.contrib.auth.decorators import login_required, permission_required
-from django.db.models.fields import CommaSeparatedIntegerField
-from django.http import HttpResponse
-from django.shortcuts import get_object_or_404, redirect, render
-from django.template import loader
-from bwt2024.forms import *
-from bwt2024.models import *
-from django.forms import *
+from django                             import template
+from django.contrib                     import messages
+from django.contrib.auth.decorators     import login_required, permission_required
+#from django.db.models.fields import CommaSeparatedIntegerField
+from django.http                        import HttpResponse
+from django.shortcuts                   import get_object_or_404, redirect, render
+from django.template                    import loader
+from bwt2024.forms                      import *
+from bwt2024.models                     import *
+from django.forms                       import *
 
 
 ###########################################################

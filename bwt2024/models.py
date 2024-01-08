@@ -3,8 +3,7 @@
 Copyright (c) 2024 - XC/EVI
 """
 
-from django.db import models
-
+from django.db      import models
 
 ###########################################################
 # Object_Unit

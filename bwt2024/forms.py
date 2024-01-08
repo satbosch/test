@@ -3,11 +3,12 @@
 Copyright (c) 2024 - XC/EVI
 """
 
-from django import forms
-from django.db.models import fields
-from django.forms import ModelForm
-from django.views.generic.edit import UpdateView
-from .models import *
+
+from django.forms       import ModelForm
+from .models            import *
+#from django import forms
+#from django.db.models import fields
+#from django.views.generic.edit import UpdateView
 
 ###########################################################
 # Object_Unit
