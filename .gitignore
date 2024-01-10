@@ -18,19 +18,23 @@ venv
 # packages
 *.whl
 
+
+# project specific
+static/*
+nvd
+media/*
+uploads/*
+
+
+
 # other
 .DS_Store
 
 # javascript
 package-lock.json
 
-staticfiles/*
-!staticfiles/.gitkeep 
+
+
 .vscode/symbols.json
 .vscode/*
-
-# project specific
-nvd
-media/*
-uploads/*
 

@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-d0g3z9e-l@%v_0*_)2+1)dc^%=kf^w+@fhbqwo(e4o!y09*i0&"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 #SECURE_PROXY_SSL_HEADER=('HTTP_X_FORWARDED_PROTO', 'https')
@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    
     "widget_tweaks",
     'rest_framework',
     "bwt2024.apps.Bwt2024Config",
@@ -135,6 +136,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = "static/"
+STATIC_ROOT = BASE_DIR / "static"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -143,8 +145,36 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
 # importing logger settings
-try:
-    from .log_settings import *
-except Exception as e:
-    # in case of any error, pass silently.
-    pass
+# try:
+#     from .log_settings import *
+# except Exception as e:
+#     # in case of any error, pass silently.
+#     pass
+
+
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+#     'handlers': {
+#         'file': {
+#             'level': 'INFO',
+#             'class': 'logging.FileHandler',
+#             #'filename': 'info.log',
+#             'filename': BASE_DIR / 'logs/error.log',
+#         },
+#     },
+#     'root': {
+#         'handlers': ['file'],
+#         'level': 'INFO',
+#     },
+# }
+
+
+# if not DEBUG:
+#     # Add console handler only in debug mode
+#     LOGGING['handlers']['console'] = {
+#         'class': 'logging.StreamHandler',
+#     }
+#     LOGGING['root']['handlers'].append('console')
+
+
