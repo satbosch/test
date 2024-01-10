@@ -7,6 +7,12 @@ from django.urls        import path, include
 from rest_framework     import routers
 from bwt2024.views      import *
 
+
+# remove on production
+from django.conf import settings
+from django.conf.urls.static import static
+# remove on production
+
 ###########################################################
 # API
 ###########################################################
@@ -33,3 +39,9 @@ urlpatterns = [
     #path( 'ou/', views_serializer.Object_Unit_ViewSet.list),
 
 ]
+
+
+# remove on production
+if not settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+# remove on production

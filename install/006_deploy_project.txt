@@ -11,6 +11,10 @@
 
 # -------------------------------------------------------
 
+# https://docs.djangoproject.com/en/4.2/howto/deployment/
+
 C:\work\00_dev\xcprovirt\Bosch_Web_Template_2024>
 
-python manage.py collectstatic
+.\venv\scripts\python.exe .\manage.py check --deploy
+
+.\venv\scripts\python.exe .\manage.py collectstatic
