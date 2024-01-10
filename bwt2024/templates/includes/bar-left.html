@@ -92,10 +92,9 @@
         {% endif %}
 
         {% if request.user.is_staff %}
-        
         <!-- item 1 -->
         <li class="nav-item">
-          <a href="/admin/" class="nav-link">
+          <a href="{% url 'admin:index' %}" class="nav-link">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
               Admin
