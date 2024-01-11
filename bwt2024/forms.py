@@ -6,7 +6,7 @@ Copyright (c) 2024 - XC/EVI
 
 from django.forms       import ModelForm
 from .models            import *
-#from django import forms
+from django import forms
 #from django.db.models import fields
 #from django.views.generic.edit import UpdateView
 
@@ -19,3 +19,10 @@ class Object_Unit_Form(ModelForm):
         model   = Object_Unit
         fields  = ['name','description']
 
+###########################################################
+# Upload File
+###########################################################
+class UploadFileForm(forms.Form):
+    file = forms.FileField()
+    project_name = forms.CharField(required=False, label="Project Name", max_length=200,         widget=forms.TextInput(attrs={'style': 'width:100%;', 'placeholder': 'Enter project name if UUID is not available'}))
+    project_version = forms.CharField(required=False, label="Project Version", max_length=50,         widget=forms.TextInput(attrs={'style': 'width:100%;', 'placeholder': 'Enter project version if UUID is not available'}))

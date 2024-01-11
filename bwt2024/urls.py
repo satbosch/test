@@ -38,6 +38,10 @@ urlpatterns = [
     path('api/', include(router.urls)),
     #path( 'ou/', views_serializer.Object_Unit_ViewSet.list),
 
+    ###########################################################
+    # Object_Upload
+    ###########################################################
+    path('object_upload',             views_object_upload.upload_file,         name='object_upload'),
 ]
 
 
