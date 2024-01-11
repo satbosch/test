@@ -61,6 +61,7 @@ MIDDLEWARE = [
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
+    "mysite.middleware.LogRequestsMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
@@ -144,11 +145,11 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
 # importing logger settings
-# try:
-#     from .log_settings import *
-# except Exception as e:
-#     # in case of any error, pass silently.
-#     pass
+try:
+    from .log_settings import *
+except Exception as e:
+    # in case of any error, pass silently.
+    pass
 
 
 # LOGGING = {
