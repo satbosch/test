@@ -74,28 +74,18 @@ def object_unit_create(request):
 
     try:
 
-        if request.method == 'POST' and 'btn_object_unit_cancel' in request.POST:
-            return redirect('object_unit_list')
-
-        elif request.method == 'POST' and 'btn_object_unit_create' in request.POST:
-            form = Object_Unit_Form(request.POST)
+        if request.method == 'POST':
+            form = Object_Unit_Create_Form(request.POST)
             if form.is_valid():
-                object_unit = form.save()
-                messages.success(request, 'BOM Dictionary Entry '+ str(object_unit.cpe) + ' created.' )
+                form.save()
+                messages.success(request, 'Object Unit created successfully.')
                 return redirect('object_unit_list')
+            else:
+                messages.error(request, 'Error: Form is not valid. Please check your input.')
         else:
-            form = Object_Unit_Form()
+            form = Object_Unit_Create_Form()
 
-        load_template           = "object_unit/object_unit_create.html"
-        context['segment']      = load_template
-        context['PageTitle']    = "BOM Dictionary Create"
-        context['msghelp']      = "This is an Help message"
-        context['breadcrumbs']  = [{'Name' : 'Home', 'Link' : '/', 'Active': False} , {'Name' : 'BOM Dictionary List', 'Link' : '/object_unit_list', 'Active': False}, {'Name' : 'BOM Dictionary Create', 'Link' : '', 'Active': True}]
-
-        context['form'] = form
-
-        html_template = loader.get_template( load_template )
-        return HttpResponse(html_template.render(context, request))
+        return render(request, 'object_unit/object_unit_create.html', {'form': form})
         
     except template.TemplateDoesNotExist:
         html_template = loader.get_template( 'errors/page-404.html' )
@@ -170,10 +160,9 @@ def object_unit_list(request):
         context['msghelp']      = "This is an Help message"
         context['breadcrumbs']  = [{'Name' : 'Home', 'Link' : '/', 'Active': False} , {'Name' : 'BOM Dictionary List', 'Link' : '/object_unit_list', 'Active': True}]
 
-        object_unit_list = Object_Unit.objects.all()
-        context['object_unit_list'] = object_unit_list
-
-        html_template = loader.get_template( load_template )
+        context['object_unit_list'] = Object_Unit_Create.objects.all()
+        load_template = "object_unit/object_unit_list.html"
+        html_template = loader.get_template(load_template)
         return HttpResponse(html_template.render(context, request))
         
     except template.TemplateDoesNotExist:

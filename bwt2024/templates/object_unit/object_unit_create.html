@@ -2,132 +2,112 @@
 {% load static %}
 {% load widget_tweaks %}
 
-{% block title %} BOM Dictionary {% endblock %}
+{% block title %}BOM Dictionary{% endblock %}
 
-<!-- Specific Page CSS goes HERE  -->
+<!-- Include Bootstrap CSS -->
 {% block stylesheets %}
 <style>
-  .content-wrapper {
-    min-height: 100% !important;
-  }
+    .content-wrapper {
+        padding-top: 20px;
+    }
+    .card-header {
+        background-color: #f8f9fa;
+        border-bottom: 1px solid #e3e6f0;
+    }
+    .card {
+        box-shadow: 0 0.15rem 1.75rem 0 rgba(58,59,69,.15);
+        margin-bottom: 1rem; /* Space between cards */
+    }
+    .form-control {
+        border-radius: 0.25rem;
+    }
+    .btn-outline-secondary {
+        margin-right: 5px;
+    }
+    .form-buttons {
+        text-align: right;
+        padding-top: 1rem;
+    }
 </style>
 {% endblock stylesheets %}
 
 {% block content %}
 <main>
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    {% include 'includes/header.html' %}
-    <!-- Main content -->
-    <section class="content">
-      <form class="form-horizontal" method="POST">
-        {% csrf_token %}
-        {% include 'includes/messages.html' %}
-        <div class="card">
-          <div class="card-header">
-            <h3 class="card-title">BOM Dictionary Entry Information</h3>
-            <div class="card-tools">
-              <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                <i class="fas fa-minus"></i>
-              </button>
+    <div class="content-wrapper">
+        {% include 'includes/header.html' %}
+        <section class="content">
+            <div class="container">
+                <form id="black-duck-component-form" method="POST" action="{% url 'object_unit_create' %}">
+                    {% csrf_token %}
+                    <div class="row">
+                        <!-- Black Duck Component Card -->
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Black Duck Component</h3>
+                                </div>
+                                <div class="card-body">
+                                    <!-- Include form fields for Black Duck Component here -->
+                                    <div class="form-group">
+                                        <label for="name">Name</label>
+                                        <input type="text" id="name" name="name" class="form-control" placeholder="Name" required autofocus>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="version">Version</label>
+                                        <input type="text" id="version" name="version" class="form-control" placeholder="Version" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="homepage">Homepage</label>
+                                        <input type="text" id="homepage" name="homepage" class="form-control" placeholder="Homepage" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- MITRE/NVD Section Card -->
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">MITRE/NVD Section</h3>
+                                </div>
+                                <div class="card-body">
+                                    <!-- Include form fields for MITRE/NVD here -->
+                                    <div class="form-group">
+                                        <label for="mitre_name">MITRE/NVD Name</label>
+                                        <input type="text" id="mitre_name" name="mitre_name" class="form-control" placeholder="MITRE/NVD Name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="mitre_version">MITRE/NVD Version</label>
+                                        <input type="text" id="mitre_version" name="mitre_version" class="form-control" placeholder="MITRE/NVD Version" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="vendor">Vendor</label>
+                                        <input type="text" id="vendor" name="vendor" class="form-control" placeholder="Vendor" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cpe">CPE</label>
+                                        <input type="text" id="cpe" name="cpe" class="form-control" placeholder="CPE" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 form-buttons">
+                            <!-- Cancel Button Form -->
+                            <form action="{% url 'object_unit_list' %}" method="get" style="display: inline;">
+                                <button type="submit" class="btn btn-outline-secondary" name="btn_object_unit_cancel">Cancel</button>
+                            </form>
+                            <!-- Create Button -->
+                            <button type="submit" class="btn btn-outline-secondary" name="btn_object_unit_create">Create</button>
+                        </div>
+                    </div>
+                </form>
             </div>
-          </div>
-          <div class="card-body">
-            <div class="panel-body">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="card mb-4">
-                    <div class="card-header" style="text-align: center;">
-                      Black Duck Component
-                    </div>
-                    <div class="card-body">
-                      <div class="row">
-                        <label class="col-md-2 col-form-label" for="bom_component">Name</label>
-                        <div class="col-md-10">
-                          <div class="form-group has-default bmd-form-group">
-                            {% render_field form.bom_component class="form-control" %}
-                          </div>
-                        </div>
-                        <label class="col-md-2 col-form-label" for="bom_component_version">Version</label>
-                        <div class="col-md-10">
-                          <div class="form-group has-default bmd-form-group">
-                            {% render_field form.bom_component_version class="form-control" %}
-                          </div>
-                        </div>
-                        <label class="col-md-2 col-form-label" for="bom_homepage">Homepage</label>
-                        <div class="col-md-10">
-                          <div class="form-group has-default bmd-form-group">
-                            {% render_field form.bom_homepage class="form-control" %}
-                          </div>
-                        </div>
-                        <div class="col-md-12" style="padding-bottom: 14px;">
-                          <div class="form-group has-default bmd-form-group">
-                            &nbsp;
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="card mb-4">
-                    <div class="card-header" style="text-align: center;">
-                      MITRE/NVD
-                    </div>
-                    <div class="card-body">
-                      <div class="row">
-                        <label class="col-md-2 col-form-label" for="component">Name</label>
-                        <div class="col-md-10">
-                          <div class="form-group has-default bmd-form-group">
-                            {% render_field form.component class="form-control" %}
-                          </div>
-                        </div>
-                        <label class="col-md-2 col-form-label" for="version">Version</label>
-                        <div class="col-md-10">
-                          <div class="form-group has-default bmd-form-group">
-                            {% render_field form.version class="form-control" %}
-                          </div>
-                        </div>
-                        <label class="col-md-2 col-form-label" for="vendor">Vendor</label>
-                        <div class="col-md-10">
-                          <div class="form-group has-default bmd-form-group">
-                            {% render_field form.vendor class="form-control" %}
-                          </div>
-                        </div>
-                        <label class="col-md-2 col-form-label" for="cpe">CPE</label>
-                        <div class="col-md-10">
-                          <div class="form-group has-default bmd-form-group">
-                            {% render_field form.cpe class="form-control" %}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-lg-10">
-                </div>
-                <div class="col-lg-2" style="text-align: right;">
-                  <button type="submit" formnovalidate class="btn btn-outline-secondary" name="btn_bom_dictionary_cancel"><i class="fas fa-undo"></i>&nbsp;&nbsp;Cancel</button>
-                  &nbsp;&nbsp;&nbsp;
-                  <button type="submit" class="btn btn-outline-secondary" name="btn_bom_dictionary_create"><i class="fas fa-save"></i>&nbsp;&nbsp;Create</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- /.card-body -->
-        </div>
-        <!-- /.card -->
-      </form>
-    </section>
-    <!-- /.content -->
-  </div>
-  <!-- ./wrapper -->
+        </section>
+    </div>
 </main>
 {% endblock content %}
 
-<!-- Specific Page JS goes HERE  -->
 {% block javascripts %}
-
 {% endblock javascripts %}

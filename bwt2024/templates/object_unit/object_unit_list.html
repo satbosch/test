@@ -29,6 +29,21 @@
     background-color: #fff;
     border-color: #dee2e6;
   }
+
+    /* Additional styles for table separation */
+  #bom_dictionary td {
+    border-right: 1px solid #dee2e6; /* Adds a right border to each cell */
+    padding: 8px; /* Adds padding within each cell */
+  }
+  #bom_dictionary th,
+  #bom_dictionary td {
+    text-align: left; /* Aligns text to the left in each cell */
+    vertical-align: middle; /* Centers text vertically in each cell */
+  }
+  #bom_dictionary th:last-child,
+  #bom_dictionary td:last-child {
+    border-right: none; /* Removes the right border for the last cell in a row */
+  }
 </style>
 
 {% endblock stylesheets %}
@@ -73,33 +88,40 @@
                 </tr>
               </thead>
               <tbody>
-                {% for bom_dictionary in bom_dictionary_list %}
+                {% for object_unit in object_unit_list %}
                 <tr>
-                  <td style="vertical-align: middle;">{{ bom_dictionary.bom_component|default_if_none:"-" }}</td>
-                  <td style="text-align: center; vertical-align: middle;">{{ bom_dictionary.bom_component_version|default_if_none:"-" }}</td>
-                  <td style="vertical-align: middle;">{{ bom_dictionary.bom_homepage|default_if_none:"-" }}</td>
-                  <td style="vertical-align: middle; border-left: 2px solid #dee2e6;">{{ bom_dictionary.component|default_if_none:"-" }}</td>
-                  <td style="text-align: center; vertical-align: middle; ">{{ bom_dictionary.version|default_if_none:"-" }}</td>
-                  <td style="vertical-align: middle;">{{ bom_dictionary.vendor|default_if_none:"-" }}</td>
-                  <td style="vertical-align: middle;">{{ bom_dictionary.cpe|default_if_none:"-" }}</td>
-                  <td style="text-align: center; vertical-align: middle;  border-left: 2px solid #dee2e6;"><button
-                      type="submit" name="btn_bom_dictionary_edit" value="{{ bom_dictionary.id }}"
-                      class="btn btn-tool">
-                      <i class="fas fa-edit"></i></button></td>
+                  <!-- Black Duck Component -->
+                  <td style="vertical-align: middle;">{{ object_unit.name|default_if_none:"-" }}</td>
+                  <td style="text-align: center; vertical-align: middle;">{{ object_unit.version|default_if_none:"-" }}</td>
+                  <td style="vertical-align: middle;">{{ object_unit.homepage|default_if_none:"-" }}</td>
+                  
+                  <!-- MITRE/NVD Section -->
+                  <td style="vertical-align: middle; border-left: 2px solid #dee2e6;">{{ object_unit.mitre_name|default_if_none:"-" }}</td>
+                  <td style="text-align: center; vertical-align: middle;">{{ object_unit.mitre_version|default_if_none:"-" }}</td>
+                  <td style="vertical-align: middle;">{{ object_unit.vendor|default_if_none:"-" }}</td>
+                  <td style="vertical-align: middle;">{{ object_unit.cpe|default_if_none:"-" }}</td>
+                  
+                  <td style="text-align: center; vertical-align: middle; border-left: 2px solid #dee2e6;">
+                    <button type="submit" name="btn_object_unit_edit" value="{{ object_unit.id }}" class="btn btn-tool">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                  </td>
                 </tr>
                 {% endfor %}
+                
               </tbody>
             </table>
           </div>
-          <!-- /.card-body -->
-          <div class="card-footer">
-            <button type="submit" class="btn btn-outline-secondary" name="btn_bom_dictionary_create"><i
-                class="fas fa-plus"></i>
-              &nbsp;Add dictionary entry</button>
-          </div>
-        </div>
         <!-- /.card -->
       </form>
+          <!-- /.card-body -->
+          <div class="card-footer">
+            <a href="{% url 'object_unit_create' %}" class="btn btn-outline-secondary">
+                <i class="fas fa-plus"></i> &nbsp;Add dictionary entry
+            </a>
+        </div>
+                  
+
     </section>
     <!-- /.content -->
   </div>

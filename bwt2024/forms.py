@@ -11,7 +11,7 @@ from django import forms
 #from django.views.generic.edit import UpdateView
 
 ###########################################################
-# Object_Unit
+# Object_Unit - Lista/Edit
 ###########################################################
 class Object_Unit_Form(ModelForm):
 
@@ -19,6 +19,14 @@ class Object_Unit_Form(ModelForm):
         model   = Object_Unit
         fields  = ['name','description']
 
+###########################################################
+# Object_Unit - Lista
+###########################################################
+class Object_Unit_Create_Form(ModelForm):
+
+    class Meta:
+        model   = Object_Unit_Create
+        fields = ['name', 'version', 'homepage', 'mitre_name', 'mitre_version', 'vendor', 'cpe']
 ###########################################################
 # Upload File
 ###########################################################
