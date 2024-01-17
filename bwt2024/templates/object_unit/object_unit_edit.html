@@ -42,22 +42,22 @@
                     </div>
                     <div class="card-body">
                       <div class="row">
-                        <label class="col-md-2 col-form-label" for="bom_component">Name</label>
+                        <label class="col-md-2 col-form-label" for="name">Name</label>
                         <div class="col-md-10">
                           <div class="form-group has-default bmd-form-group">
-                            {% render_field form.bom_component class="form-control" %}
+                            {% render_field form.name class="form-control" %}
                           </div>
                         </div>
-                        <label class="col-md-2 col-form-label" for="bom_component_version">Version</label>
+                        <label class="col-md-2 col-form-label" for="version">Version</label>
                         <div class="col-md-10">
                           <div class="form-group has-default bmd-form-group">
-                            {% render_field form.bom_component_version class="form-control" %}
+                            {% render_field form.version class="form-control" %}
                           </div>
                         </div>
-                        <label class="col-md-2 col-form-label" for="bom_homepage">Homepage</label>
+                        <label class="col-md-2 col-form-label" for="homepage">Homepage</label>
                         <div class="col-md-10">
                           <div class="form-group has-default bmd-form-group">
-                            {% render_field form.bom_homepage class="form-control" %}
+                            {% render_field form.homepage class="form-control" %}
                           </div>
                         </div>
                         <div class="col-md-12" style="padding-bottom: 14px;">
@@ -76,16 +76,16 @@
                     </div>
                     <div class="card-body">
                       <div class="row">
-                        <label class="col-md-2 col-form-label" for="component">Name</label>
+                        <label class="col-md-2 col-form-label" for="mitre_name">Name</label>
                         <div class="col-md-10">
                           <div class="form-group has-default bmd-form-group">
-                            {% render_field form.component class="form-control" %}
+                            {% render_field form.mitre_name class="form-control" %}
                           </div>
                         </div>
-                        <label class="col-md-2 col-form-label" for="version">Version</label>
+                        <label class="col-md-2 col-form-label" for="mitre_version">Version</label>
                         <div class="col-md-10">
                           <div class="form-group has-default bmd-form-group">
-                            {% render_field form.version class="form-control" %}
+                            {% render_field form.mitre_version class="form-control" %}
                           </div>
                         </div>
                         <label class="col-md-2 col-form-label" for="vendor">Vendor</label>
@@ -110,11 +110,11 @@
                 </div>
                 <div class="col-lg-2" style="text-align: right;">
                   <button type="submit" formnovalidate class="btn btn-outline-secondary"
-                    name="btn_bom_dictionary_cancel" value="{{ bom_dictionary.id }}"><i
+                    name="btn_object_unit_cancel" value="{{ bom_dictionary.id }}"><i
                       class="fas fa-undo"></i> &nbsp;&nbsp;Cancel
                   </button>
                   &nbsp;&nbsp;&nbsp;
-                  <button type="submit" class="btn btn-outline-secondary" name="btn_bom_dictionary_save"
+                  <button type="submit" class="btn btn-outline-secondary" name="btn_object_unit_save"
                     value="{{ bom_dictionary.id }}"><i class="fas fa-save"></i>
                     &nbsp;&nbsp;Save</button>
                 </div>

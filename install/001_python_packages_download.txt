@@ -32,3 +32,5 @@ pip download tzdata==2023.4 --dest .\install\packages
 pip download urllib3==2.1.0 --dest .\install\packages
 pip download wheel==0.42.0 --dest .\install\packages
 pip download zipp==3.17.0 --dest .\install\packages
+pip download et-xmlfile==1.1.0 --dest .\install\packages
+pip download openpyxl==3.1.2 --dest .\install\packages

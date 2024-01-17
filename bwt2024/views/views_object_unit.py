@@ -104,14 +104,14 @@ def object_unit_edit(request,object_unit_id):
 
     try:
 
-        object_unit = Object_Unit.objects.get(pk=object_unit_id)
+        object_unit = Object_Unit_Create.objects.get(pk=object_unit_id)
         context['object_unit'] = object_unit
 
         if request.method == 'POST' and 'btn_object_unit_cancel' in request.POST:
             return redirect('object_unit_list')
 
         elif request.method == 'POST' and 'btn_object_unit_save' in request.POST:
-            form = Object_Unit_Form(request.POST, instance = object_unit)
+            form = Object_Unit_Create_Form(request.POST, instance = object_unit)
             if form.is_valid():
                 form.save()
                 messages.success(request, 'BOM Dictionary Entry '+ str(object_unit.cpe) + ' saved.')
@@ -124,7 +124,7 @@ def object_unit_edit(request,object_unit_id):
         context['msghelp']      = "This is an Help message"
         context['breadcrumbs']  = [{'Name' : 'Home', 'Link' : '/', 'Active': False} , {'Name' : 'BOM Dictionary List', 'Link' : '/object_unit_list', 'Active': False}, {'Name' : 'BOM Dictionary Edit', 'Link' : '', 'Active': True}]
         
-        form = Object_Unit_Form(instance=object_unit)
+        form = Object_Unit_Create_Form(instance=object_unit)
         context['form'] = form
 
         html_template = loader.get_template( load_template )

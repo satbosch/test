@@ -20,6 +20,15 @@ class Object_Unit_Form(ModelForm):
         fields  = ['name','description']
 
 ###########################################################
+# Object_Unit - Lista/Edit
+###########################################################
+class Object_Unit_Download_Form(ModelForm):
+
+    class Meta:
+        model   = Object_Unit_Download
+        fields  = ['component','version']
+
+###########################################################
 # Object_Unit - Lista
 ###########################################################
 class Object_Unit_Create_Form(ModelForm):

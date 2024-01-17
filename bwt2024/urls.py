@@ -42,6 +42,11 @@ urlpatterns = [
     # Object_Upload
     ###########################################################
     path('object_upload',             views_object_upload.upload_file,         name='object_upload'),
+
+    ###########################################################
+    # Object_Download
+    ###########################################################
+    path('object_unit_download',             views_object_download.object_unit_download,         name='object_unit_download'),
 ]
 
 

@@ -14,6 +14,15 @@ class Object_Unit(models.Model):
 
     def __str__(self):
             return self.name
+###########################################################
+# Object_Unit_Download
+###########################################################
+class Object_Unit_Download(models.Model):
+    component               = models.CharField(         db_column='Component',            max_length=200,     blank=True,                  unique=True )
+    version                 = models.CharField(         db_column='Version',              max_length=200,     blank=True,                  null=True   )
+
+    def __str__(self):
+            return self.name
 
 ###########################################################
 # Object_Unit_Create

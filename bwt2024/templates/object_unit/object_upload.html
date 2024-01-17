@@ -53,6 +53,7 @@
     <section class="content">
       <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
+        {% include 'includes/messages.html' %}
         <!-- Default box -->
         <div class="card">
           <div id="temporary-message"></div>
