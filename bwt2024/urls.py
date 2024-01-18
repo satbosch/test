@@ -18,11 +18,13 @@ from django.conf.urls.static import static
 ###########################################################
 router = routers.DefaultRouter()
 router.register(r'Units', views_serializer.Object_Unit_ViewSet)
+router.register(r'Units_Multi_Param', Object_Unit_Multi_Param_ViewSet, basename='objectunitmultiparam')
 
 urlpatterns = [
 
     path('home',                                        views_main.view_home,                         name='home'                   ),
     path('',                                            views_main.view_home,                         name='home'                   ),
+    path('',                                            include(router.urls)                                                        ),
 
     ###########################################################
     # Object_Unit

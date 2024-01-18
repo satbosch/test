@@ -9,7 +9,9 @@ from rest_framework             import permissions, viewsets
 from rest_framework.views       import APIView
 from bwt2024.serializers        import *
 
-#class Object_Unit_ViewSet(viewsets.ModelViewSet):
+#####################################################################
+# API - GET all - /api/Units/
+####################################################################
 class Object_Unit_ViewSet(viewsets.ReadOnlyModelViewSet):
     permission_classes = [permissions.IsAuthenticated]
 
@@ -17,21 +19,22 @@ class Object_Unit_ViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = Object_Unit_Serializer
     lookup_field = "id"
 
+#####################################################################
+# API - Multi parameter GET request - /api/Units_Multi_Param/?name=a&description=a
+####################################################################
+class Object_Unit_Multi_Param_ViewSet(viewsets.ModelViewSet):
+    serializer_class = Object_Unit_Serializer
 
-#class Object_Unit_View(APIView):
-#    def get(self, request):
-#            Object_Units = Object_Unit.objects.all()
-#            return Response({"ous": Object_Units})
+    def get_queryset(self):
+        queryset = Object_Unit.objects.all()
+        name = self.request.query_params.get('name')
+        description = self.request.query_params.get('description')
+        
+        if name:
+            queryset = queryset.filter(name__icontains=name)
+        if description:
+            queryset = queryset.filter(description__icontains=description)
 
-
-#    # 1. List all
-#    def get(self, request, *args, **kwargs):
-#        """
-#        API endpoint that allows Object_Unit to be viewed
-#        """
-#        queryset = Object_Unit.objects.all()
-#        serializer_class = Object_Unit_Serializer
-#        return Response(serializer_class.data, status=status.HTTP_200_OK)
-
+        return queryset
 
     
