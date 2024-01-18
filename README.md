@@ -4,8 +4,8 @@ Bosch Web Template 2024
 
  ==============================================================
 
-  Author:	Pedro Vieira (XC/EQS XC/EVI)
-          Lourenço Santos
+  Author:	Pedro Vieira (XC/EQS XC/EVI)  
+          Lourenço Santos (XC/EVI)
 
  Create date:  03/01/2024
  Last Update:	18/01/2024
