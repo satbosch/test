@@ -22,8 +22,8 @@
 .\venv\scripts\python.exe -m pip install .\install\packages\asgiref-3.7.2-py3-none-any.whl -f ./ --no-index
 .\venv\scripts\python.exe -m pip install .\install\packages\tzdata-2023.4-py2.py3-none-any.whl -f ./ --no-index
 .\venv\scripts\python.exe -m pip install .\install\packages\Django-4.2.9-py3-none-any.whl -f ./ --no-index
-.\venv\scripts\python.exe -m pip install .\install\packages\urllib3-2.1.0-py3-none-any.whl -f ./ --no-index
-.\venv\scripts\python.exe -m pip install .\install\packages\pytz-2023.3.post1-py2.py3-none-any.whl -f ./ --no-index
+.\venv\scripts\python.exe -m pip install .\install\packages\urllib3-2.2.0-py3-none-any.whl -f ./ --no-index
+.\venv\scripts\python.exe -m pip install .\install\packages\pytz-2024.1-py2.py3-none-any.whl -f ./ --no-index
 .\venv\scripts\python.exe -m pip install .\install\packages\zipp-3.17.0-py3-none-any.whl -f ./ --no-index
 .\venv\scripts\python.exe -m pip install .\install\packages\importlib_metadata-7.0.1-py3-none-any.whl -f ./ --no-index
 .\venv\scripts\python.exe -m pip install .\install\packages\django_widget_tweaks-1.5.0-py3-none-any.whl -f ./ --no-index
@@ -31,10 +31,11 @@
 .\venv\scripts\python.exe -m pip install .\install\packages\Markdown-3.5.1-py3-none-any.whl -f ./ --no-index
 .\venv\scripts\python.exe -m pip install .\install\packages\django_filter-23.5-py3-none-any.whl -f ./ --no-index
 .\venv\scripts\python.exe -m pip install .\install\packages\charset_normalizer-3.3.2-cp39-cp39-win_amd64.whl -f ./ --no-index
-.\venv\scripts\python.exe -m pip install .\install\packages\certifi-2023.11.17-py3-none-any.whl -f ./ --no-index
+.\venv\scripts\python.exe -m pip install .\install\packages\certifi-2024.2.2-py3-none-any.whl -f ./ --no-index
 .\venv\scripts\python.exe -m pip install .\install\packages\idna-3.6-py3-none-any.whl -f ./ --no-index
 .\venv\scripts\python.exe -m pip install .\install\packages\requests-2.31.0-py3-none-any.whl -f ./ --no-index
 .\venv\scripts\python.exe -m pip install .\install\packages\et_xmlfile-1.1.0-py3-none-any.whl -f ./ --no-index
 .\venv\scripts\python.exe -m pip install .\install\packages\openpyxl-3.1.2-py2.py3-none-any.whl -f ./ --no-index
+.\venv\scripts\python.exe -m pip install .\install\packages\pyodbc-5.0.1-cp39-cp39-win_amd64.whl  -f ./ --no-index
 .\venv\scripts\python.exe -m pip install .\install\packages\mssql_django-1.4-py3-none-any.whl  -f ./ --no-index
-.\venv\scripts\python.exe -m pip install .\install\packages\pyodbc-5.0.1.dist-info  -f ./ --no-index
+

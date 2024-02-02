@@ -96,7 +96,7 @@ def object_unit_create(request):
         return HttpResponse(html_template.render(context, request))
 
 ###########################################################
-# BOMDictionary Edit
+# Object_Unit Edit
 ###########################################################
 @login_required(login_url="/login/")
 def object_unit_edit(request,object_unit_id):
@@ -114,15 +114,15 @@ def object_unit_edit(request,object_unit_id):
             form = Object_Unit_Create_Form(request.POST, instance = object_unit)
             if form.is_valid():
                 form.save()
-                messages.success(request, 'BOM Dictionary Entry '+ str(object_unit.cpe) + ' saved.')
+                messages.success(request, 'Object Unit Entry '+ str(object_unit.cpe) + ' saved.')
                 return redirect('object_unit_list')
 
         load_template           = "object_unit/object_unit_edit.html"
         context['segment']      = load_template
-        context['PageTitle']    = "BOM Dictionary Edit"
+        context['PageTitle']    = "Object Unit Edit"
         context['msghelp']      = "This is an Help message"
         context['msghelp']      = "This is an Help message"
-        context['breadcrumbs']  = [{'Name' : 'Home', 'Link' : '/', 'Active': False} , {'Name' : 'BOM Dictionary List', 'Link' : '/object_unit_list', 'Active': False}, {'Name' : 'BOM Dictionary Edit', 'Link' : '', 'Active': True}]
+        context['breadcrumbs']  = [{'Name' : 'Home', 'Link' : '/', 'Active': False} , {'Name' : 'Object Unit List', 'Link' : '/object_unit_list', 'Active': False}, {'Name' : 'Object Unit Edit', 'Link' : '', 'Active': True}]
         
         form = Object_Unit_Create_Form(instance=object_unit)
         context['form'] = form
@@ -139,7 +139,7 @@ def object_unit_edit(request,object_unit_id):
         return HttpResponse(html_template.render(context, request))
 
 ###########################################################
-# BOMDictionary List
+# Object Unit List
 ###########################################################
 @login_required(login_url="/login/")
 def object_unit_list(request):
@@ -158,7 +158,7 @@ def object_unit_list(request):
         context['segment']      = load_template
         context['PageTitle']    = "BOM Dict List"
         context['msghelp']      = "This is an Help message"
-        context['breadcrumbs']  = [{'Name' : 'Home', 'Link' : '/', 'Active': False} , {'Name' : 'BOM Dictionary List', 'Link' : '/object_unit_list', 'Active': True}]
+        context['breadcrumbs']  = [{'Name' : 'Home', 'Link' : '/', 'Active': False} , {'Name' : 'Object Unit List', 'Link' : '/object_unit_list', 'Active': True}]
 
         context['object_unit_list'] = Object_Unit_Create.objects.all()
         load_template = "object_unit/object_unit_list.html"
