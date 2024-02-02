@@ -34,12 +34,9 @@ pip download tzdata==2023.4 --dest .\install\packages
 pip download urllib3==2.1.0 --dest .\install\packages
 pip download wheel==0.42.0 --dest .\install\packages
 pip download zipp==3.17.0 --dest .\install\packages
-<<<<<<< HEAD
 pip download et-xmlfile==1.1.0 --dest .\install\packages
 pip download openpyxl==3.1.2 --dest .\install\packages
-=======
 pip download certifi==2023.11.17 --dest .\install\packages
 pip download charset_normalizer==3.3.2 --dest .\install\packages
 pip download idna==3.6 --dest .\install\packages
 pip download requests==2.31.0 --dest .\install\packages
->>>>>>> c4e6c49 (.)
