@@ -14,13 +14,13 @@
 
 # C:\work\00_dev\xcprovirt\Bosch_Web_Template_2024\>
 
-.\venv\scripts\python.exe -m pip install .\install\packages\pip-23.3.2-py3-none-any.whl -f ./ --no-index
+.\venv\scripts\python.exe -m pip install .\install\packages\pip-24.0-py3-none-any.whl -f ./ --no-index
 .\venv\scripts\python.exe -m pip install .\install\packages\wheel-0.42.0-py3-none-any.whl -f ./ --no-index
 .\venv\scripts\python.exe -m pip install .\install\packages\setuptools-69.0.3-py3-none-any.whl -f ./ --no-index
 .\venv\scripts\python.exe -m pip install .\install\packages\sqlparse-0.4.4-py3-none-any.whl -f ./ --no-index
 .\venv\scripts\python.exe -m pip install .\install\packages\typing_extensions-4.9.0-py3-none-any.whl -f ./ --no-index
 .\venv\scripts\python.exe -m pip install .\install\packages\asgiref-3.7.2-py3-none-any.whl -f ./ --no-index
-.\venv\scripts\python.exe -m pip install .\install\packages\tzdata-2023.4-py2.py3-none-any.whl -f ./ --no-index
+.\venv\scripts\python.exe -m pip install .\install\packages\tzdata-2024.1-py2.py3-none-any.whl -f ./ --no-index
 .\venv\scripts\python.exe -m pip install .\install\packages\Django-4.2.9-py3-none-any.whl -f ./ --no-index
 .\venv\scripts\python.exe -m pip install .\install\packages\urllib3-2.2.0-py3-none-any.whl -f ./ --no-index
 .\venv\scripts\python.exe -m pip install .\install\packages\pytz-2024.1-py2.py3-none-any.whl -f ./ --no-index
@@ -30,12 +30,11 @@
 .\venv\scripts\python.exe -m pip install .\install\packages\djangorestframework-3.14.0-py3-none-any.whl -f ./ --no-index
 .\venv\scripts\python.exe -m pip install .\install\packages\Markdown-3.5.1-py3-none-any.whl -f ./ --no-index
 .\venv\scripts\python.exe -m pip install .\install\packages\django_filter-23.5-py3-none-any.whl -f ./ --no-index
-.\venv\scripts\python.exe -m pip install .\install\packages\charset_normalizer-3.3.2-cp39-cp39-win_amd64.whl -f ./ --no-index
+.\venv\scripts\python.exe -m pip install .\install\packages\charset_normalizer-3.3.2-cp311-cp311-win_amd64.whl -f ./ --no-index
 .\venv\scripts\python.exe -m pip install .\install\packages\certifi-2024.2.2-py3-none-any.whl -f ./ --no-index
 .\venv\scripts\python.exe -m pip install .\install\packages\idna-3.6-py3-none-any.whl -f ./ --no-index
 .\venv\scripts\python.exe -m pip install .\install\packages\requests-2.31.0-py3-none-any.whl -f ./ --no-index
 .\venv\scripts\python.exe -m pip install .\install\packages\et_xmlfile-1.1.0-py3-none-any.whl -f ./ --no-index
 .\venv\scripts\python.exe -m pip install .\install\packages\openpyxl-3.1.2-py2.py3-none-any.whl -f ./ --no-index
-.\venv\scripts\python.exe -m pip install .\install\packages\pyodbc-5.0.1-cp39-cp39-win_amd64.whl  -f ./ --no-index
+.\venv\scripts\python.exe -m pip install .\install\packages\pyodbc-5.0.1-cp311-cp311-win_amd64.whl  -f ./ --no-index
 .\venv\scripts\python.exe -m pip install .\install\packages\mssql_django-1.4-py3-none-any.whl  -f ./ --no-index
-

@@ -16,27 +16,27 @@
 
 # C:\work\00_dev\xcprovirt\Bosch_Web_Template_2024\>
 
-pip download asgiref==3.7.2 --dest .\install\packages
-pip download Django==4.2.9 --dest .\install\packages
-pip download django-filter==23.5 --dest .\install\packages
-pip download django-widget-tweaks==1.5.0 --dest .\install\packages
-pip download djangorestframework==3.14.0 --dest .\install\packages
-pip download importlib-metadata==7.0.1 --dest .\install\packages
-pip download Markdown==3.5.1 --dest .\install\packages
-pip download mssql-django==1.4 --dest .\install\packages
-pip download pip==23.3.2 --dest .\install\packages
-pip download pyodbc==5.0.1 --dest .\install\packages
-pip download pytz==2024.1 --dest .\install\packages
-pip download setuptools==69.0.3 --dest .\install\packages
-pip download sqlparse==0.4.4 --dest .\install\packages
-pip download typing_extensions==4.9.0 --dest .\install\packages
-pip download tzdata==2023.4 --dest .\install\packages
-pip download urllib3==2.2.0 --dest .\install\packages
-pip download wheel==0.42.0 --dest .\install\packages
-pip download zipp==3.17.0 --dest .\install\packages
-pip download et-xmlfile==1.1.0 --dest .\install\packages
-pip download openpyxl==3.1.2 --dest .\install\packages
-pip download certifi==2024.2.2 --dest .\install\packages
-pip download charset_normalizer==3.3.2 --dest .\install\packages
-pip download idna==3.6 --dest .\install\packages
-pip download requests==2.31.0 --dest .\install\packages
+pip download --no-deps asgiref==3.7.2 --dest .\install\packages
+pip download --no-deps sqlparse==0.4.4 --dest .\install\packages
+pip download --no-deps tzdata==2024.1 --dest .\install\packages
+pip download --no-deps Django==4.2.9 --dest .\install\packages
+pip download --no-deps django-filter==23.5 --dest .\install\packages
+pip download --no-deps django-widget-tweaks==1.5.0 --dest .\install\packages
+pip download --no-deps djangorestframework==3.14.0 --dest .\install\packages
+pip download --no-deps zipp==3.17.0 --dest .\install\packages
+pip download --no-deps importlib-metadata==7.0.1 --dest .\install\packages
+pip download --no-deps Markdown==3.5.1 --dest .\install\packages
+pip download --no-deps mssql-django==1.4 --dest .\install\packages
+pip download --no-deps pip==24.0 --dest .\install\packages
+pip download --no-deps pyodbc==5.0.1 --dest .\install\packages
+pip download --no-deps pytz==2024.1 --dest .\install\packages
+pip download --no-deps setuptools==69.0.3 --dest .\install\packages
+pip download --no-deps typing_extensions==4.9.0 --dest .\install\packages
+pip download --no-deps urllib3==2.2.0 --dest .\install\packages
+pip download --no-deps wheel==0.42.0 --dest .\install\packages
+pip download --no-deps et-xmlfile==1.1.0 --dest .\install\packages
+pip download --no-deps openpyxl==3.1.2 --dest .\install\packages
+pip download --no-deps certifi==2024.2.2 --dest .\install\packages
+pip download --no-deps charset_normalizer==3.3.2 --dest .\install\packages
+pip download --no-deps idna==3.6 --dest .\install\packages
+pip download --no-deps requests==2.31.0 --dest .\install\packages
