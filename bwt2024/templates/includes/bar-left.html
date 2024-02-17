@@ -27,6 +27,25 @@
     </div>
     {% endif %}
 
+    {% if request.user.is_anonymous %}
+    <!-- Sidebar Login -->
+    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+      <nav class="mt-1">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Sidebar Login -->
+          <li class="nav-item">
+            <a href="{% url 'login' %}" class="nav-link">
+              <i class="nav-icon fas fa-sign-in-alt"></i>
+              <p>
+                Login
+              </p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    {% endif %}
+
     <!-- Sidebar Menu -->
     <nav class="mt-2">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -43,19 +62,6 @@
           </a>
         </li>
 
-        {% if request.user.is_anonymous %}
-        <!-- item 1 -->
-        <li class="nav-item">
-          <a href="{% url 'login' %}" class="nav-link">
-            <i class="nav-icon fas fa-sign-in-alt"></i>
-            <p>
-              Login
-            </p>
-          </a>
-        </li>
-        {% endif %}
-
-
         {% if request.user.is_authenticated %}
         
         <!-- item 1 -->
@@ -67,7 +73,6 @@
             </p>
           </a>
         </li>
-        
 
         <!-- item 2 -->
         <li class="nav-item">
