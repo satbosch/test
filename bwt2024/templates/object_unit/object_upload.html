@@ -1,12 +1,13 @@
 {% extends "layouts/base.html" %} <!-- Changed to base.html to include side bar and header -->
+{% load static %}
 {% block title %} Public BOM Upload {% endblock %}
 
 <!-- Specific Page CSS goes HERE  -->
 {% block stylesheets %}
 
-<link rel="stylesheet" href="/static/assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-<link rel="stylesheet" href="/static/assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-<link rel="stylesheet" href="/static/assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+<link rel="stylesheet" href="{% static 'bwt2024/assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css' %}">
+<link rel="stylesheet" href="{% static 'bwt2024/assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css' %}">
+<link rel="stylesheet" href="{% static 'bwt2024/assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css' %}">
 
 <style>
   .content-wrapper {
