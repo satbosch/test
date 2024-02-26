@@ -18,12 +18,14 @@ class Object_Unit_ViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Object_Unit.objects.all()
     serializer_class = Object_Unit_Serializer
     lookup_field = "id"
+    http_method_names = ['get', 'head', 'options']
 
 #####################################################################
 # API - Multi parameter GET request - /api/Units_Multi_Param/?name=a&description=a
 ####################################################################
 class Object_Unit_Multi_Param_ViewSet(viewsets.ModelViewSet):
     serializer_class = Object_Unit_Serializer
+    http_method_names = ['get', 'head', 'options']
 
     def get_queryset(self):
         queryset = Object_Unit.objects.all()
