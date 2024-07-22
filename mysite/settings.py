@@ -30,7 +30,7 @@ UPLOADS_ROOT = os.path.join(BASE_DIR, 'uploads')
 SECRET_KEY = "django-insecure-d0g3z9e-l@%v_0*_)2+1)dc^%=kf^w+@fhbqwo(e4o!y09*i0&"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 #SECURE_PROXY_SSL_HEADER=('HTTP_X_FORWARDED_PROTO', 'https')
